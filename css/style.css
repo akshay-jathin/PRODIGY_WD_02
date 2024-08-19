@@ -1,0 +1,208 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-image: url('images/pexels-francesco-ungaro-998641.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.laps {
+    height: 250px;
+    width: 250px;
+    overflow: auto;
+    list-style: none;
+    color:#F7F7F7;
+    position:relative;
+    padding: 30px ;
+}
+
+.laps::-webkit-scrollbar {
+    display: none;
+}
+
+.lap-item {
+    display: inline-block;
+    width: 229px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 50px;  
+    margin-bottom: 15px;       
+}
+
+.lap-clear-button {
+    display: block;
+    position: fixed;
+    width: 150px;
+    text-align: center;
+}
+
+.display-none {
+    display: none;
+}
+
+.number{
+    color:#F7F7F7
+}
+
+.time-stamp{
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.min {
+    font-size: 35px;
+    margin: 5px
+}
+
+.sec {
+    font-size: 29px;
+    margin: 5px;
+}
+
+.msec {
+    font-size: 17px;
+    margin: 5px;
+}
+
+.container {
+    backdrop-filter: blur(10);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    position: relative;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+}
+
+.inner-circle {
+    width: 165px;
+    height: 165px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-image: url('images/image.png');
+    background-size:250%;
+    background-position: center;
+    position: relative;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.stopwatch {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: transparent;
+    position: relative;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.stopwatch::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    background-image:linear-gradient(to right, #6A82FB, #FC5C7D);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    animation: rotate-border 2s linear infinite;
+}
+
+@keyframes rotate-border {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.display {
+    font-weight: 10px;
+    color: rgba(255, 255, 255, 0.9);
+    z-index: 1;
+    background-color: transparent;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+button {
+    width: 150px;
+    padding: 10px 0;
+    font-size: 17px;
+    font-weight: 10px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 20px;
+    border: 0px solid transparent;
+    position: relative;
+    z-index: 0;
+    background: linear-gradient(to right, #6A82FB, #FC5C7D);
+    color: #F7F7F7;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    z-index: -1;
+    transition: background 0.3s ease;
+}
+
+button:hover::before {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+button:hover {
+    background-color: rgb(247, 247, 247,0.2);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.icon-play,
+.icon-pause {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.display-none {
+    display: none;
+}
+
+button svg {
+    width: 20px;
+    height: 20px;
+}
